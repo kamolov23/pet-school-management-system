@@ -11,29 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teachers', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('id');
-            $table->string('user_id');
             $table->string('school_id');
-            $table->string('class_id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('subject');
-            $table->string('phone')->nullable();
-            $table->string('experience')->nullable();
+            $table->string('title');
+            $table->string('image');
             $table->string('created_at')->nullable();
-            $table->string('updated_at')->nullable();
+            $table->string('updated')->nullable();
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('teachers');
+        Schema::dropIfExists('galleries');
     }
 };
